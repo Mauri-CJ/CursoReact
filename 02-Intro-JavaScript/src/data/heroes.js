@@ -1,4 +1,5 @@
-export const heroes = [
+//Exportacion por default  export default [ {...},{...}] y a la hora de importarlo import heroes (podemos asignarle cualquier nombre) from 'ruta relativa de la importacion'
+ const heroes = [
     {
         id: 1,
         name: 'Batman',
@@ -25,3 +26,8 @@ export const heroes = [
         owner: 'Marvel'
     },
 ];
+
+export const owners = ['DC','Marvel']
+export default heroes;
+
+//Exportar por default al final 

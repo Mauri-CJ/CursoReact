@@ -1,0 +1,72 @@
+//const getImagenPromesa = () => {
+//    return new Promise((resolve,reject) =>{
+//        resolve('OK')
+//    })
+//}
+//
+//getImagenPromesa()
+//    .then(console.log)
+
+//Tengo el mismo resultado que la promesa de arriba
+//const getImagen = async() => {return 'OK'}
+//getImagen().then(console.log)
+
+//---------------------Recreando la promesa pero con async await
+//const apiKey = 'BuUlinrvyrtzKmTknLuKscBqUnn1s1NB'
+//
+//const httpCall = fetch(`https://api.giphy.com/v1/gifs/random?api_key=${apiKey}`) //retorna una promesa
+//
+//httpCall 
+//    .then(resp => resp.json()) 
+//    .then(({data}) => {
+//        const {url} = data.images.original 
+//        const img = document.createElement('img')
+//        img.src = url
+//        document.body.append(img)
+//    })
+//    .catch(console.warn) 
+
+
+//Para poder traajar con await tiene que estar dentro de una funcion async
+const getImagen = async() =>{
+    try {
+        const apiKey = 'BuUlinrvyrtzKmTknLuKscBqUnn1s1NB'
+        //El await  hace que se tenga que esperar a que el fetch termine para poder seguir ejecutando el codigo
+        //Como si fuera codigo sincrono
+        const resp = await fetch(`https://api.giphy.com/v1/gifs/random?api_key=${apiKey}`)
+        const {data} = await resp.json()
+        const {url} = data.images.original
+        const img = document.createElement('img')
+        img.src = url
+        document.body.append(img)
+    }
+    catch(error){ //Manejo del error
+        console.log(error)
+    }
+}
+
+getImagen()
+
+//---------------------
+const data = []
+function getData() {
+    return new Promise((resolve,reject) =>{
+        if (data.length == 0 ) {
+            reject ( new Error('Data is empty'))
+        }
+        setTimeout(()=>{
+            resolve(data)
+        },2000)
+    })
+}
+
+//Async-Await es un Azucar sintactica para las promesas, es una forma de reemplazar el then/catch
+async function fetchingData(){
+    const books = await getData()
+    console.log(books)
+}
+fetchingData()
+
+//getData().then(console.log)
+//       .catch(console.log)
+
