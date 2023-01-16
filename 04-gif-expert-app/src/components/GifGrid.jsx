@@ -20,6 +20,7 @@ export const GifGrid = ({categoria}) => {
     //     getImages()
     // },[])
 
+    //Usando custom hook
     const {images,isLoading} = useFetchGifs(categoria)
     console.log(isLoading)
 

@@ -11,10 +11,10 @@ const GifExpertApp = () => {
     }
   return (
     <>
-    {/* Titulo*/}
+      {/* Titulo*/}
       <h1>Gif Expert App</h1>
     
-    {/* Input */}
+      {/* Input */}
       {/* Esta no es la forma recomendada para se agreguen valores a la categoria, ya que estamos enviando la funcion de agregacion al hijo */}
       {/* <AddCategory  setCategorias = {setCategorias}/>  Mandamos una funcion al componente hijo*/}
       {/* La mejor forma de hacerlo es de la siguiente manera*/}
@@ -24,14 +24,13 @@ const GifExpertApp = () => {
 
 
 
-    {/* Listado de Gif*/}
-        {categorias.map((categoria)=> (<GifGrid 
+      {/* Listado de Gif*/}
+      {categorias.map((categoria)=> (<GifGrid 
                                         key={categoria}
                                         categoria = {categoria}
                                       />)
         )
-
-        }
+      }
     </>
   )
 }

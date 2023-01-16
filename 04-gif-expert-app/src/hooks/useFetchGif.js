@@ -7,7 +7,7 @@ import { getGifs } from "../helpers/getGifs"
 
      const [images, setImages] = useState([])
      const [isLoading,setIsLoading] = useState(true)
-     
+     console.log(isLoading)
      
      const getImages = async () => {
          const newImages = await getGifs(categoria)
