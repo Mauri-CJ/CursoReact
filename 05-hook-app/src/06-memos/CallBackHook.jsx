@@ -18,7 +18,7 @@ export const CallBackHook = () => {
         setCounter((count) => count + value) //De esta manera no memoriza el valor del counter, sino que lo recibe por parametro y lo suma uno
         //La funcion al no cambiar, no se vuelve a redeclarar o generar nuevamente, el valor del counter cambia porque internamente el setState sabe tomar el valor actual, pero no hace que la funcion cambie
     },
-      [], //Si le pasamos el counter en las dependencias, la funcion se vuelve a generar cada que el counter cambie, y se vuelve a disparar el showIncrement
+      [], //Si le pasamos el counter en las dependencias, la funcion se vuelve a generar cada que el counter cambie, y se vuelve a disparar el showIncrement porque es un componente memorizado que detecta los cambios en sus props, entonces se vuelve a disparar
     )
     
     //Este es otro uso para el useCallBack (disparar un efecto cada que una funcion cambie)
