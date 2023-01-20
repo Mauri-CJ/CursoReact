@@ -14,10 +14,11 @@ export const CallBackHook = () => {
     const increment = useCallback(
       (value) => { //Los argumentos que recibe la funcion a memorizar, se reciben dentro de la callback que pasamos al useCallback, ya que la callback que le pasamos a el hook, es literamente la que vamos a ejecutar
         //setCounter(counter+1) Si lo dejamos asi, la funcion va a memorizar el counter tambier, entonces siempre va a quedar en uno cuando incrementemos
-        //Debemos hacerlo de la siguiente manera
+        //Debemos hacerlUSEo de la siguiente manera
         setCounter((count) => count + value) //De esta manera no memoriza el valor del counter, sino que lo recibe por parametro y lo suma uno
+        //La funcion al no cambiar, no se vuelve a redeclarar o generar nuevamente, el valor del counter cambia porque internamente el setState sabe tomar el valor actual, pero no hace que la funcion cambie
     },
-      [],
+      [], //Si le pasamos el counter en las dependencias, la funcion se vuelve a generar cada que el counter cambie, y se vuelve a disparar el showIncrement
     )
     
     //Este es otro uso para el useCallBack (disparar un efecto cada que una funcion cambie)
