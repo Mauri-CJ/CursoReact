@@ -9,9 +9,14 @@ import HooksApp from './HooksApp'
 import { MultipleCustomHooks } from './03-examples/MultipleCustomHooks'
 import { FocusScreen } from './04-useRef/FocusScreen'
 import { Layout } from './05-useLayoutEffect/Layaout'
+import { Memorize } from './06-memos/Memorize'
+import { MemoHook } from './06-memos/MemoHook'
+import { CallBackHook } from './06-memos/CallBackHook'
+import { Padre } from './07-tarea-memo/Padre'
+
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <Layout/>
+    <Padre/>
 )
 

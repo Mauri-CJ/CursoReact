@@ -34,5 +34,5 @@ export function ReactingChangeState() {
       <button onClick={() => setEndX(randomX())}>Pass in a randomized value</button>
       <Box endX={endX}>{endX}</Box>
     </div>
-  );
+  )
 }
