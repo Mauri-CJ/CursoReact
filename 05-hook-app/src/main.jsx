@@ -12,10 +12,9 @@ import { Memorize } from './06-memos/Memorize'
 import { MemoHook } from './06-memos/MemoHook'
 import { CallBackHook } from './06-memos/CallBackHook'
 import { Padre } from './07-tarea-memo/Padre'
-
-
+import { TodoApp } from './08-useReducer/TodoApp'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <CallBackHook/>
+    <TodoApp/>
 )
 

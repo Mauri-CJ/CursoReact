@@ -1,6 +1,5 @@
 //EL useLayoutEffect se usa mayormente para tener las mediciones del tamaño del componente
 import { useLayoutEffect,useRef,useState} from "react"
-
 export const Quote = ({quote,author}) => {
   const pRef = useRef() //Referenciamos al parrafo
   const [boxSize, setboxSize] = useState({widht:0,height:0})
@@ -11,7 +10,7 @@ export const Quote = ({quote,author}) => {
     const {height,width} = pRef.current.getBoundingClientRect()
 
     setboxSize({height,width}) //Le seteamos las nuevas medidas del parrafo al estado para mostrarlas en pantalla
-  }, [quote]) //Aunque no es necesario [] basta con eso, porque cada vez que traemos uno, el componente se destruye y vuelve a crearse
+  }, [quote])//Aunque no es necesario [] basta con eso, porque cada vez que traemos uno, el componente se destruye y vuelve a crearse
 
   return (
     <>
