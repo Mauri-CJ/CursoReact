@@ -23,6 +23,7 @@ export const useTodo = () => {
     }, [todos])
     
 
+    //Acciones para manejar el state todos
     const handleNewTodo = (todo) =>{
         const action = {
             type: '[TODO] Add todo',
