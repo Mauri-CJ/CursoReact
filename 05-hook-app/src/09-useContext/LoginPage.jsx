@@ -1,7 +1,13 @@
 import React from 'react'
+
+//Hook que nos permite consumir un contexto
 import { useContext } from 'react'
-import { UserContext } from './context/UserContext';
+
+//Contexto creado por nosotros
+import { UserContext } from './context/UserContext'
+
 export const LoginPage = () => {
+  //Del contexto que creamos nosotros, destructuramos lo que necesitamos en este componente
   const {user,setUser} = useContext(UserContext);
   return (
     <>
