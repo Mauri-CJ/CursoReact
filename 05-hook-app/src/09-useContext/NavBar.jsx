@@ -19,8 +19,8 @@ export const NavBar = () => {
                 </NavLink>
 
                 {/*Navlink es igual que el link, solo que podemos especificarle una clase en particular, dependiendo donde se encuentre */}
+                {/*Si el nav link esta activo, le agegamos a la clase el active para que la marque diferente a los otros links para ver en que link estamos parados de la navbar */}
                 <NavLink
-                    {/*Si el nav link esta activo, le agegamos a la clase el active para que la marque diferente a los otros links para ver en que link estamos parados de la navbar */}
                     className={({isActive}) => {return `nav-link ${isActive? 'active' : ''} ` }}
                     to = "/about"
                 >   
