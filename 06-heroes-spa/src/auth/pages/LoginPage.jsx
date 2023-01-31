@@ -1,11 +1,18 @@
+import { useContext } from "react"
 import { useNavigate } from "react-router-dom"
+import { AuthContext } from "../context/AuthContext"
+
 
 export const LoginPage = () => {
   //Replace evita que la persona  pueda regresar al historial anterior porque en teoria lo estamos remplazando
   const navigate = useNavigate()
   
+  const {login,} = useContext(AuthContext)
+
   const onLogin = () => {
-    navigate('/',{replace:true})
+    const lastPath = localStorage.getItem('lastPath') || '/'
+    login('Mauricio Cella')
+    navigate(lastPath,{replace:true})
   }
 
   return (
